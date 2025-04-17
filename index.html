@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day/Night Mode Theme Test</title>
+    <link rel="stylesheet" href="index.css" />
+</head>
+
+<body data-theme="day">
+
+    <div class="container">
+
+        <!-- Parent block with custom property -->
+        <div class="parent">
+            <p>Parent element</p>
+
+            <!-- Moved toggle inside parent -->
+            <button id="themeToggle">🌞 Toggle Theme</button>
+
+            <div class="child">
+                <p>Child element with inheritance disabled for --box-color.</p>
+            </div>
+        </div>
+
+        <!-- One through Nine test elements -->
+        <div class="one">
+            <p>One</p>
+        </div>
+        <div class="two">
+            <p>Two</p>
+        </div>
+        <div class="three">
+            <p>Three</p>
+        </div>
+        <div class="four">
+            <p>Four</p>
+        </div>
+        <div class="five">
+            <p>Five</p>
+        </div>
+        <div class="six">
+            <p>Six</p>
+        </div>
+        <div class="seven">
+            <p>Seven</p>
+        </div>
+        <div class="eight">
+            <p>Eight</p>
+        </div>
+        <div class="nine">
+            <p>Nine</p>
+        </div>
+
+    </div>
+
+    <script>
+        const toggleBtn = document.getElementById('themeToggle');
+        toggleBtn.addEventListener('click', () => {
+            const currentTheme = document.body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'day' ? 'night' : 'day';
+            document.body.setAttribute('data-theme', newTheme);
+            toggleBtn.textContent = newTheme === 'day' ? '🌞 Toggle Theme' : '🌙 Toggle Theme';
+        });
+    </script>
+</body>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>Contact: <a href="mailto:brforeal.dev@gmail.com">brforeal.dev@gmail.com</a> &nbsp;|&nbsp; <a
+            href="tel:9548173900">954.817.3900</a></p>
+</footer>
+
+</html>
