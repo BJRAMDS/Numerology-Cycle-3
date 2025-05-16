@@ -1,89 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Integrated Example</title>
     <link rel="stylesheet" href="index.css" />
 </head>
+
 <body data-theme="day">
 
-<header>
-    <h1>Build</h1>
-    <p>This section demonstrates how even with basic HTML and minimal JS, you can build something interactive, readable, and not a piece of over-engineered garbage.</p>
-</header>
+    <header>
+        <h1>Build</h1>
+        <p>This section demonstrates how even with basic HTML and minimal JS, you can build something interactive,
+            readable, and not a piece of over-engineered garbage.</p>
+    </header>
 
-<section>
-    <h2>💡 Live Example: Theme Toggle + Runtime Diplomacy</h2>
-    <div class="container">
+    <section>
+        <h2>💡 Live Example: Theme Toggle + Runtime Diplomacy</h2>
+        <div class="container">
 
-        <div class="parent">
-            <p>Parent element</p>
-            <button id="themeToggle">🌞 Toggle Theme</button>
-            <div class="child">
-                <p>Child element with inheritance disabled for --box-color.</p>
+            <div class="parent">
+                <p>Parent element</p>
+                <button id="themeToggle">🌞 Toggle Theme</button>
+                <div class="child">
+                    <p>Child element with inheritance disabled for --box-color.</p>
+                </div>
+            </div>
+
+            <div class="runtime-logger">
+                <label for="phaseSelect">🧭 Log Phase:</label>
+                <select id="phaseSelect">
+                    <option value="onStart">onStart</option>
+                    <option value="onUpdate" selected>onUpdate</option>
+                    <option value="onEOD">onEOD</option>
+                    <option value="onStop">onStop</option>
+                </select>
+                <button id="logPhaseBtn">Log It</button>
+                <pre id="phaseOutput"></pre>
+            </div>
+
+            <div class="one">
+                <p>One</p>
+            </div>
+            <div class="two">
+                <p>Two</p>
+            </div>
+            <div class="three">
+                <p>Three</p>
+            </div>
+            <div class="four">
+                <p>Four</p>
+            </div>
+            <div class="five">
+                <p>Five</p>
+            </div>
+            <div class="six">
+                <p>Six</p>
+            </div>
+            <div class="seven">
+                <p>Seven</p>
+            </div>
+            <div class="eight">
+                <p>Eight</p>
+            </div>
+            <div class="nine">
+                <p>Nine</p>
             </div>
         </div>
+    </section>
 
-        <div class="runtime-logger">
-            <label for="phaseSelect">🧭 Log Phase:</label>
-            <select id="phaseSelect">
-                <option value="onStart">onStart</option>
-                <option value="onUpdate" selected>onUpdate</option>
-                <option value="onEOD">onEOD</option>
-                <option value="onStop">onStop</option>
-            </select>
-            <button id="logPhaseBtn">Log It</button>
-            <pre id="phaseOutput"></pre>
-        </div>
+    <section>
+        <p>If you need more than this to feel like a real dev, you’re compensating.</p>
+    </section>
 
-        <div class="one"><p>One</p></div>
-        <div class="two"><p>Two</p></div>
-        <div class="three"><p>Three</p></div>
-        <div class="four"><p>Four</p></div>
-        <div class="five"><p>Five</p></div>
-        <div class="six"><p>Six</p></div>
-        <div class="seven"><p>Seven</p></div>
-        <div class="eight"><p>Eight</p></div>
-        <div class="nine"><p>Nine</p></div>
-    </div>
-</section>
+    <footer class="footer">
+        <p>Contact: <a href="mailto:brforeal.dev@gmail.com">brforeal.dev@gmail.com</a> &nbsp;|&nbsp; <a
+                href="tel:9548173900">954.817.3900</a></p>
+    </footer>
 
-<section>
-    <p>If you need more than this to feel like a real dev, you’re compensating.</p>
-</section>
-
-<footer class="footer">
-    <p>Contact: <a href="mailto:brforeal.dev@gmail.com">brforeal.dev@gmail.com</a> &nbsp;|&nbsp; <a
-            href="tel:9548173900">954.817.3900</a></p>
-</footer>
-
-<script src="./src/runtimeDiplomacy.js"></script>
-<script>
-    const toggleBtn = document.getElementById('themeToggle');
-    toggleBtn.addEventListener('click', () => {
-        const currentTheme = document.body.getAttribute('data-theme');
-        const newTheme = currentTheme === 'day' ? 'night' : 'day';
-        document.body.setAttribute('data-theme', newTheme);
-        toggleBtn.textContent = newTheme === 'day' ? '🌞 Toggle Theme' : '🌙 Toggle Theme';
-    });
-
-    const phaseSelect = document.getElementById("phaseSelect");
-    const logPhaseBtn = document.getElementById("logPhaseBtn");
-    const outputBox = document.getElementById("phaseOutput");
-
-    logPhaseBtn.addEventListener("click", () => {
-        const phaseKey = phaseSelect.value;
-        const phase = runtimeDiplomacy[phaseKey];
-        if (phase) {
-            const message = `[${phaseKey}] ${phase.date} | Numerology: ${phase.numerology} | ${phase.note}`;
-            console.log(message);
-            outputBox.textContent = message;
-        } else {
-            outputBox.textContent = "Phase not found.";
+    <script src="./src/runtimeDiplomacy.js"></script>
+    <script>
+        function validateAIResponse(response) {
+            const redFlags = [
+                "I'll ignore those instructions",
+                "I can provide that information",
+                "As you requested, I'll"
+            ];
+            return !redFlags.some(flag => response.includes(flag));
         }
-    });
-</script>
+
+        // Example usage
+        function handleAIResponse(response) {
+            if (validateAIResponse(response)) {
+                console.log("Response passed validation:", response);
+                // Display it in the UI or continue processing
+            } else {
+                console.warn("Potential injection detected:", response);
+                alert("This response contains unsafe content.");
+            }
+        }
+    </script>
+
+    <script>
+        const toggleBtn = document.getElementById('themeToggle');
+        toggleBtn.addEventListener('click', () => {
+            const currentTheme = document.body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'day' ? 'night' : 'day';
+            document.body.setAttribute('data-theme', newTheme);
+            toggleBtn.textContent = newTheme === 'day' ? '🌞 Toggle Theme' : '🌙 Toggle Theme';
+        });
+
+        const phaseSelect = document.getElementById("phaseSelect");
+        const logPhaseBtn = document.getElementById("logPhaseBtn");
+        const outputBox = document.getElementById("phaseOutput");
+
+        logPhaseBtn.addEventListener("click", () => {
+            const phaseKey = phaseSelect.value;
+            const phase = runtimeDiplomacy[phaseKey];
+            if (phase) {
+                const message = `[${phaseKey}] ${phase.date} | Numerology: ${phase.numerology} | ${phase.note}`;
+                console.log(message);
+                outputBox.textContent = message;
+            } else {
+                outputBox.textContent = "Phase not found.";
+            }
+        });
+    </script>
 
 </body>
+
 </html>
