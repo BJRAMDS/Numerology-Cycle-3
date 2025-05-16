@@ -47,6 +47,24 @@ body[data-theme="night"] {
     --nine: #1f5753;
 }
 
+.runtime-logger {
+    margin: 1em 0;
+    padding: 1em;
+    border: 2px dashed var(--box-color, #ccc);
+    background: var(--background, #f9f9f9);
+}
+
+.runtime-logger select,
+.runtime-logger button {
+    margin-left: 0.5em;
+}
+
+.runtime-logger pre {
+    margin-top: 1em;
+    font-family: monospace;
+    color: var(--text-color, #333);
+}
+
 /* Layout */
 .container {
     display: flex;
