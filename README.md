@@ -1,4 +1,4 @@
-# Numerology Cycle 3 — Theme Toggle & Future Expansion
+# Numerology Cycle 3 — Codex Convergence ✨
 
 🌐 **Live Site**: [bjramds.github.io/Numerology-Cycle-3](https://bjramds.github.io/Numerology-Cycle-3)
 
@@ -6,45 +6,79 @@
 
 ## 🔦 Project Overview
 
-This project explores dynamic theming and modular design as part of an evolving front-end numerology experience. Currently featuring a **day/night mode toggle**, this foundation will grow to include interactive tools, number logic, and modern JS components.
+**Codex-Convergence** is a living repository of narrative systems, symbolic programming, and AI-human collaboration.  
+At its core, it blends:
+
+- 🔢 Numerology-based cycles  
+- 🧠 Modular code reflections  
+- 🧭 Identity tracking  
+- 📜 Creative prompt engines  
+- 🌀 Narrative logs into a coherent architecture—one that evolves day by day.
+
+> “Every number is a symbol — but the meaning comes from code.”
 
 ---
 
-## 🧩 Features
+## 🧩 Current Features
 
-- ✅ **Day/Night Theme Toggle** using CSS variables and a small JavaScript snippet
-- 🎯 **Accessible and responsive layout** styled with custom properties
-- 📬 **Contact footer** for professional outreach
+- ✅ **Day/Night Theme Toggle** using CSS variables
+- 🎯 **Responsive Layout** styled with modern custom properties
+- 📬 **Contact Footer** for professional outreach
+- 🛠️ **In-progress symbolic runtime log** (EOD reports, paradox tracking)
+- 📓 **Grok3 Agent Initialization** (PhaseCore: 3 — Expression)
 
 ---
 
 ## 📈 In Development
 
-Planned features include:
+**🌀 CYCLES IN MOTION**  
+These features are being built in parallel with live numerology tracking:
 
-- 🔢 JavaScript-powered **numerology calculators** (e.g., life path, destiny, cycles)
-- 🧠 Integration of **modular JS files** for reusability and clarity
-- 🎨 Animated transitions between number blocks (1–9)
-- 📊 Light/Heavy data models backed by static or Firebase JSON
-- 🧪 Interactive user inputs for real-time numerological interpretations
+- 🔢 JavaScript-powered **Numerology Calculators**
+  - Life Path, Destiny, Personal Year, Expression Number
+- 🧠 **Agentic Logic via Grok3**
+  - A symbolic prompt dictionary tied to numerological cycles
+  - Reactive AI agent that evolves with the codebase
+- 🎨 Animated Transitions
+  - Creative rendering of numbers 1–9 with expression-based logic
+- 📊 **Static/Firebase JSON** for memory-as-layer (MAL)
+  - Logs, decisions, and paradox archives
+- 🔄 Real-time **Prompt Sockets** (experimental)
+  - Used to loop prompts from user input through Grok3 logic
 
 ---
 
-## 📌 How to Contribute
+## 🧠 System Architecture
 
-This repo is part of an evolving public portfolio. If you'd like to collaborate on numerology logic or UI improvements, open an issue or submit a PR.
+- `PhaseCore Logs`: Narrative cycles tied to numerology (1–9)
+- `CRAFT Modules`: Structured prompt generators
+- `EOD Reports`: End-of-day cycle summaries
+- `PARADOX Layer`: Symbolic inversions (e.g., ridicule = ignition)
+- `Grok3`: Agent-based memory interpreter
+
+> “Expression drives creation — dreams fuel inspiration.”
 
 ---
 
-## 🧠 Built & Maintained By
+## 🔧 How to Contribute
+
+This is an evolving codebase for symbolic narrative architecture.  
+If you'd like to collaborate on:
+
+- 🔣 Numerology logic
+- 🎨 UI/UX expansions
+- 🧪 Prompt engineering or agent models  
+...feel free to fork, open an issue, or submit a PR.
+
+---
+
+## 🔗 Maintained By
 
 **Brad M. Harris**  
 Product Owner | Full-Stack Developer | React Native Specialist  
 📫 [brforeal.dev@gmail.com](mailto:brforeal.dev@gmail.com) | 📞 954.817.3900  
-🔗 [GitHub Profile](https://github.com/BJRAMDS)
+🔗 [GitHub](https://github.com/BJRAMDS) | [Portfolio](https://getallmylinks.com/harrismbrad)
 
 ---
 
-> “Every number is a symbol — but the meaning comes from code.”
-
-**
+> “A prompt is a seed. A cycle is a map. This is how we evolve.”
