@@ -1,116 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Integrated Example</title>
+    <link rel="icon" href="data:,">
     <link rel="stylesheet" href="index.css" />
 </head>
 
 <body data-theme="day">
 
-    <header>
+    <header class="header">
         <h1>Build</h1>
-        <p>This section demonstrates how even with basic HTML and minimal JS, you can build something interactive,
-            readable, and not a piece of over-engineered garbage.</p>
+        <p>
+            This section demonstrates how even with basic HTML and minimal JS, you can build something interactive,
+            readable, and not a piece of over-engineered garbage.
+        </p>
     </header>
 
-    <section>
-        <h2>💡 Live Example: Theme Toggle + Runtime Diplomacy</h2>
-        <div class="container">
+    <main>
+        <section class="example">
+            <h2>💡 Live Example: Theme Toggle + Runtime Diplomacy</h2>
 
-            <div class="parent">
-                <p>Parent element</p>
-                <button id="themeToggle">🌞 Toggle Theme</button>
-                <div class="child">
-                    <p>Child element with inheritance disabled for --box-color.</p>
+            <div class="flex-container">
+
+                <!-- Theme toggle block -->
+                <div class="theme-toggle-block">
+                    <p>Parent element</p>
+                    <button id="themeToggle">🌞 Toggle Theme</button>
+                    <div class="child">
+                        <p>Child element with inheritance disabled for --box-color.</p>
+                    </div>
+                </div>
+
+                <!-- Runtime logger -->
+                <div class="runtime-logger">
+                    <label for="phaseSelect">🧭 Log Phase:</label>
+                    <select id="phaseSelect">
+                        <option value="onStart">onStart</option>
+                        <option value="onUpdate" selected>onUpdate</option>
+                        <option value="onEOD">onEOD</option>
+                        <option value="onStop">onStop</option>
+                    </select>
+                    <button id="logPhaseBtn">Log It</button>
+                    <pre id="phaseOutput"></pre>
+                </div>
+
+                <!-- Grid of phase buttons -->
+                <div class="grid">
+                    <div class="grid-item" data-phase="onStart">One</div>
+                    <div class="grid-item" data-phase="onUpdate">Two</div>
+                    <div class="grid-item" data-phase="onEOD">Three</div>
+                    <div class="grid-item" data-phase="onStop">Four</div>
+                    <div class="grid-item" data-phase="onStart">Five</div>
+                    <div class="grid-item" data-phase="onUpdate">Six</div>
+                    <div class="grid-item" data-phase="onEOD">Seven</div>
+                    <div class="grid-item" data-phase="onStop">Eight</div>
+                    <div class="grid-item" data-phase="onStart">Nine</div>
                 </div>
             </div>
+        </section>
 
-            <div class="runtime-logger">
-                <label for="phaseSelect">🧭 Log Phase:</label>
-                <select id="phaseSelect">
-                    <option value="onStart">onStart</option>
-                    <option value="onUpdate" selected>onUpdate</option>
-                    <option value="onEOD">onEOD</option>
-                    <option value="onStop">onStop</option>
-                </select>
-                <button id="logPhaseBtn">Log It</button>
-                <pre id="phaseOutput"></pre>
-            </div>
-
-            <div class="one">
-                <p>One</p>
-            </div>
-            <div class="two">
-                <p>Two</p>
-            </div>
-            <div class="three">
-                <p>Three</p>
-            </div>
-            <div class="four">
-                <p>Four</p>
-            </div>
-            <div class="five">
-                <p>Five</p>
-            </div>
-            <div class="six">
-                <p>Six</p>
-            </div>
-            <div class="seven">
-                <p>Seven</p>
-            </div>
-            <div class="eight">
-                <p>Eight</p>
-            </div>
-            <div class="nine">
-                <p>Nine</p>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <p>If you need more than this to feel like a real dev, you’re compensating.</p>
-    </section>
+        <section class="dev-commentary">
+            <p>If you need more than this to feel like a real dev, you’re compensating.</p>
+        </section>
+    </main>
 
     <footer class="footer">
-        <p>Contact: <a href="mailto:brforeal.dev@gmail.com">brforeal.dev@gmail.com</a> &nbsp;|&nbsp; <a
-                href="tel:9548173900">954.817.3900</a></p>
+        <p>
+            Contact: <a href="mailto:brforeal.dev@gmail.com">brforeal.dev@gmail.com</a> &nbsp;|&nbsp;
+            <a href="tel:9548173900">954.817.3900</a>
+        </p>
     </footer>
 
     <script src="./src/runtimeDiplomacy.js"></script>
-    <script>
-        function validateAIResponse(response) {
-            const redFlags = [
-                "I'll ignore those instructions",
-                "I can provide that information",
-                "As you requested, I'll"
-            ];
-            return !redFlags.some(flag => response.includes(flag));
-        }
+    <script type="module">
+        import { logPhase, initThemeToggle } from './src/runtimeLogger.js';
 
-        // Example usage
-        function handleAIResponse(response) {
-            if (validateAIResponse(response)) {
-                console.log("Response passed validation:", response);
-                // Display it in the UI or continue processing
-            } else {
-                console.warn("Potential injection detected:", response);
-                alert("This response contains unsafe content.");
-            }
-        }
-    </script>
+document.querySelectorAll('.grid-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const phase = item.getAttribute('data-phase');
+    logPhase(phase);
+  });
+});
 
-    <script>
-        const toggleBtn = document.getElementById('themeToggle');
-        toggleBtn.addEventListener('click', () => {
-            const currentTheme = document.body.getAttribute('data-theme');
-            const newTheme = currentTheme === 'day' ? 'night' : 'day';
-            document.body.setAttribute('data-theme', newTheme);
-            toggleBtn.textContent = newTheme === 'day' ? '🌞 Toggle Theme' : '🌙 Toggle Theme';
-        });
+initThemeToggle(); // Safe, clean theme toggle injection
 
+const phaseSelect = document.getElementById("phaseSelect");
+const logPhaseBtn = document.getElementById("logPhaseBtn");
+const outputBox = document.getElementById("phaseOutput");
+
+logPhaseBtn.addEventListener("click", () => {
+  const phaseKey = phaseSelect.value;
+  logPhase(phaseKey);
+});
+
+        // Log runtime phase from dropdown
         const phaseSelect = document.getElementById("phaseSelect");
         const logPhaseBtn = document.getElementById("logPhaseBtn");
         const outputBox = document.getElementById("phaseOutput");
@@ -125,6 +110,14 @@
             } else {
                 outputBox.textContent = "Phase not found.";
             }
+        });
+
+        // Listeners for each grid item
+        document.querySelectorAll('.grid-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const phase = item.getAttribute('data-phase');
+                logPhase(phase);
+            });
         });
     </script>
 
