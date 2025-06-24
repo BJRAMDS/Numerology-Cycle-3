@@ -1,6 +1,6 @@
 // Diplomatic Runtime Flow – Symbolic Sequence (Aligned with TITAN Deciders + PhaseCore Standards)
 
-const runtimeDiplomacy = {
+export const runtimeDiplomacy = {
   onStart: {
     numerology: 2,
     date: "2025-04-07",
@@ -48,15 +48,3 @@ const runtimeDiplomacy = {
     }
   }
 };
-
-// Helper function to call any phase
-function logPhase(phaseKey) {
-  if (runtimeDiplomacy[phaseKey]) {
-    runtimeDiplomacy[phaseKey].log();
-  } else {
-    console.log("Phase not found:", phaseKey);
-  }
-}
-
-// Default test
-logPhase("onUpdate");
