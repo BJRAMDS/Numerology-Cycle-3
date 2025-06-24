@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,22 +21,22 @@
 
     <main>
         <section class="example">
-            <h2>💡 Live Example: Theme Toggle + Runtime Diplomacy</h2>
+            <h2>💡 Theme Toggle + Runtime Diplomacy</h2>
 
             <div class="flex-container">
 
                 <!-- Theme toggle block -->
                 <div class="theme-toggle-block">
-                    <p>Parent element</p>
-                    <button id="themeToggle">🌞 Toggle Theme</button>
+                    <p>Sr. Developer</p>
+                    <button id="themeToggle"> Log</button>
                     <div class="child">
-                        <p>Child element with inheritance disabled for --box-color.</p>
+                      <p>Jr. Developer</p>
                     </div>
                 </div>
 
                 <!-- Runtime logger -->
                 <div class="runtime-logger">
-                    <label for="phaseSelect">🧭 Log Phase:</label>
+                    <label for="phaseSelect">🧭  Phase:</label>
                     <select id="phaseSelect">
                         <option value="onStart">onStart</option>
                         <option value="onUpdate" selected>onUpdate</option>
@@ -77,42 +78,20 @@
     <script type="module">
         import { logPhase, initThemeToggle } from './src/runtimeLogger.js';
 
-document.querySelectorAll('.grid-item').forEach(item => {
-  item.addEventListener('click', () => {
-    const phase = item.getAttribute('data-phase');
-    logPhase(phase);
-  });
-});
+        // 🔄 Theme toggle
+        initThemeToggle();
 
-initThemeToggle(); // Safe, clean theme toggle injection
-
-const phaseSelect = document.getElementById("phaseSelect");
-const logPhaseBtn = document.getElementById("logPhaseBtn");
-const outputBox = document.getElementById("phaseOutput");
-
-logPhaseBtn.addEventListener("click", () => {
-  const phaseKey = phaseSelect.value;
-  logPhase(phaseKey);
-});
-
-        // Log runtime phase from dropdown
+        // 🧭 Dropdown logic
         const phaseSelect = document.getElementById("phaseSelect");
         const logPhaseBtn = document.getElementById("logPhaseBtn");
         const outputBox = document.getElementById("phaseOutput");
 
         logPhaseBtn.addEventListener("click", () => {
             const phaseKey = phaseSelect.value;
-            const phase = runtimeDiplomacy[phaseKey];
-            if (phase) {
-                const message = `[${phaseKey}] ${phase.date} | Numerology: ${phase.numerology} | ${phase.note}`;
-                console.log(message);
-                outputBox.textContent = message;
-            } else {
-                outputBox.textContent = "Phase not found.";
-            }
+            logPhase(phaseKey); // Handles logging and output
         });
 
-        // Listeners for each grid item
+        // 🧩 Grid logic
         document.querySelectorAll('.grid-item').forEach(item => {
             item.addEventListener('click', () => {
                 const phase = item.getAttribute('data-phase');

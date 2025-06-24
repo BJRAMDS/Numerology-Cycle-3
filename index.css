@@ -2,7 +2,7 @@
 :root {
   --bg-color-day: #ffffff;
   --text-color-day: #000000;
-  --bg-color-night: #1e1e1e;
+  --bg-color-night: #202520;
   --text-color-night: #f5f5f5;
   --box-color: #ddd;
   --highlight-color: #007bff;
@@ -55,10 +55,10 @@ header, footer {
 }
 
 .child {
-  background-color: #fafafa;
-  padding: 0.5rem;
+  background-color: whitesmoke;
+  padding: 3.5rem;
   margin-top: 0.5rem;
-  border: 1px dashed #aaa;
+  border: 4px dashed #030000;
 }
 
 /* Logger Block */
@@ -100,7 +100,7 @@ header, footer {
   background: #eaeaea;
   border-radius: 4px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.6s ease;
 }
 
 .grid-item:hover {
@@ -140,6 +140,6 @@ header, footer {
   }
 
   .runtime-logger {
-    padding: 0.5rem;
+    padding: 4.5rem;
   }
 }
