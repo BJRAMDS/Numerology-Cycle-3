@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Integrated Example</title>
+    <title>Numerology Cycle 3 — Codex Convergence ✨</title>
     <link rel="icon" href="data:,">
     <link rel="stylesheet" href="index.css" />
 </head>
@@ -12,10 +12,9 @@
 <body data-theme="day">
 
     <header class="header">
-        <h1>Build</h1>
+        <h1>Codex Convergence</h1>
         <p>
-            This section demonstrates how even with basic HTML and minimal JS, you can build something interactive,
-            readable, and not a piece of over-engineered garbage.
+            This is the live symbolic runtime. We are integrating core Numerology features into the front-end to test calculation logic.
         </p>
     </header>
 
@@ -25,7 +24,6 @@
 
             <div class="flex-container">
 
-                <!-- Theme toggle block -->
                 <div class="theme-toggle-block">
                     <p>Sr. Developer</p>
                     <button id="themeToggle"> Log</button>
@@ -34,9 +32,18 @@
                     </div>
                 </div>
 
-                <!-- Runtime logger -->
+                <div class="numerology-calc-block runtime-logger">
+                    <h3>🔢 Life Path Calculator</h3>
+                    <p>Enter Date of Birth (MM/DD/YYYY):</p>
+                    <input type="number" id="inputMonth" placeholder="MM" min="1" max="12" value="10" size="2" required>
+                    <input type="number" id="inputDay" placeholder="DD" min="1" max="31" value="25" size="2" required>
+                    <input type="number" id="inputYear" placeholder="YYYY" min="1900" max="2100" value="1995" size="4" required>
+                    <button id="calculateLifePathBtn">Calculate</button>
+                    <pre id="lifePathOutput">Life Path: ?</pre>
+                </div>
+                
                 <div class="runtime-logger">
-                    <label for="phaseSelect">🧭  Phase:</label>
+                    <label for="phaseSelect">🧭  Phase:</label>
                     <select id="phaseSelect">
                         <option value="onStart">onStart</option>
                         <option value="onUpdate" selected>onUpdate</option>
@@ -47,7 +54,6 @@
                     <pre id="phaseOutput"></pre>
                 </div>
 
-                <!-- Grid of phase buttons -->
                 <div class="grid">
                     <div class="grid-item" data-phase="onStart">One</div>
                     <div class="grid-item" data-phase="onUpdate">Two</div>
@@ -75,31 +81,6 @@
     </footer>
 
     <script src="./src/runtimeDiplomacy.js"></script>
-    <script type="module">
-        import { logPhase, initThemeToggle } from './src/runtimeLogger.js';
-
-        // 🔄 Theme toggle
-        initThemeToggle();
-
-        // 🧭 Dropdown logic
-        const phaseSelect = document.getElementById("phaseSelect");
-        const logPhaseBtn = document.getElementById("logPhaseBtn");
-        const outputBox = document.getElementById("phaseOutput");
-
-        logPhaseBtn.addEventListener("click", () => {
-            const phaseKey = phaseSelect.value;
-            logPhase(phaseKey); // Handles logging and output
-        });
-
-        // 🧩 Grid logic
-        document.querySelectorAll('.grid-item').forEach(item => {
-            item.addEventListener('click', () => {
-                const phase = item.getAttribute('data-phase');
-                logPhase(phase);
-            });
-        });
-    </script>
-
-</body>
+    <script type="module" src="./src/index.js"></script> </body>
 
 </html>
