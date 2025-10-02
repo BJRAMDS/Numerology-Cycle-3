@@ -67,10 +67,10 @@ This project utilizes multiple AI models working in synergy.
 
 - **`Grok3`**: Functions as the primary agent for interpreting memory and driving the symbolic runtime. It is the core logic engine.
 - **`Gemini`**: Acts as the co-creative and steering model. Its role is to:
-    - Introspect on data structures (like `masterKeys.json`) to provide deeper context.
-    - Generate visual "stages" to mark key development milestones.
-    - Assist in translating high-level concepts into actionable code and documentation.
-    - Steer the conversational development process in collaboration with the human developers.
+- Introspect on data structures (like `masterKeys.json`) to provide deeper context.
+- Generate visual "stages" to mark key development milestones.
+- Assist in translating high-level concepts into actionable code and documentation.
+- Steer the conversational development process in collaboration with the human developers.
 
 ---
 
