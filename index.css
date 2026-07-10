@@ -1,31 +1,46 @@
 /* =========================================================
    CODEX CONVERGENCE
    Runtime Dashboard Theme System
+   Version: 0.1.0
    ========================================================= */
 
 
-/* Root Variables */
+/* =========================================================
+   Root Variables
+   ========================================================= */
+
 :root {
 
-  --bg-day: #f5f7fa;
-  --text-day: #111827;
+    --bg-day: #f5f7fa;
+    --text-day: #111827;
 
-  --bg-night: #111827;
-  --text-night: #f9fafb;
+    --bg-night: #111827;
+    --text-night: #f9fafb;
 
-  --panel: #ffffff;
+    --panel: #ffffff;
 
-  --border: #d1d5db;
+    --panel-dark: #1f2937;
 
-  --accent: #007bff;
+    --border: #d1d5db;
 
-  --success: #16a34a;
+    --border-dark: #374151;
 
-  --radius: 12px;
+    --accent: #007bff;
 
-  --shadow:
-      0 8px 24px rgba(0,0,0,.12);
+    --accent-glow:
+        rgba(0,123,255,.35);
+
+    --success: #16a34a;
+
+    --warning: #f59e0b;
+
+    --radius: 12px;
+
+    --shadow:
+        0 8px 24px rgba(0,0,0,.12);
+
 }
+
 
 
 /* =========================================================
@@ -33,10 +48,15 @@
    ========================================================= */
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+
+    box-sizing:border-box;
+
+    margin:0;
+
+    padding:0;
+
 }
+
 
 
 body {
@@ -46,36 +66,43 @@ body {
         system-ui,
         sans-serif;
 
-    line-height: 1.6;
+    line-height:1.6;
 
-    min-height: 100vh;
+    min-height:100vh;
 
-    padding: 1rem;
+    padding:1rem;
 
     transition:
-        background .3s,
-        color .3s;
+        background .3s ease,
+        color .3s ease;
+
 }
 
 
+
 /* =========================================================
-   Themes
+   Theme Runtime
    ========================================================= */
 
 body[data-theme="day"] {
 
-    background:var(--bg-day);
+    background:
+        var(--bg-day);
 
-    color:var(--text-day);
+    color:
+        var(--text-day);
 
 }
 
 
+
 body[data-theme="night"] {
 
-    background:var(--bg-night);
+    background:
+        var(--bg-night);
 
-    color:var(--text-night);
+    color:
+        var(--text-night);
 
 }
 
@@ -84,7 +111,6 @@ body[data-theme="night"] {
 /* =========================================================
    Runtime Header
    ========================================================= */
-
 
 .runtime-header {
 
@@ -95,6 +121,15 @@ body[data-theme="night"] {
     margin-bottom:1.5rem;
 
 }
+
+
+
+.runtime-header h1 {
+
+    font-size:2rem;
+
+}
+
 
 
 .runtime-status {
@@ -112,13 +147,14 @@ body[data-theme="night"] {
 }
 
 
+
 .runtime-status span {
 
     padding:.4rem .8rem;
 
     border-radius:999px;
 
-    border:1px solid var(--border-day);
+    border:1px solid var(--border);
 
     font-family:monospace;
 
@@ -127,17 +163,19 @@ body[data-theme="night"] {
 
 
 /* =========================================================
-   Main Dashboard Layout
+   Dashboard Layout
    ========================================================= */
-
 
 .runtime-dashboard {
 
     display:grid;
 
     grid-template-columns:
+
         250px
+
         1fr
+
         300px;
 
     gap:1rem;
@@ -145,10 +183,10 @@ body[data-theme="night"] {
 }
 
 
+
 /* =========================================================
    Panels
    ========================================================= */
-
 
 .control-panel,
 .workspace,
@@ -165,24 +203,38 @@ body[data-theme="night"] {
 
 
 /* =========================================================
-   Runtime Cards
+   Runtime Widgets
    ========================================================= */
-
 
 .runtime-widget {
 
     background:
-        var(--panel-day);
 
-    padding:1rem;
+        var(--panel);
 
-    border-radius:var(--radius);
+    padding:
+
+        1rem;
 
     border:
 
-        1px solid var(--border-day);
+        1px solid var(--border);
 
-    box-shadow:var(--shadow);
+    border-radius:
+
+        var(--radius);
+
+    box-shadow:
+
+        var(--shadow);
+
+}
+
+
+
+.runtime-widget h2 {
+
+    margin-bottom:.75rem;
 
 }
 
@@ -191,7 +243,6 @@ body[data-theme="night"] {
 /* =========================================================
    Controls
    ========================================================= */
-
 
 button,
 select,
@@ -204,11 +255,14 @@ input {
 }
 
 
+
 button {
 
     cursor:pointer;
 
-    background:var(--accent);
+    background:
+
+        var(--accent);
 
     color:white;
 
@@ -216,14 +270,16 @@ button {
 
     border-radius:8px;
 
-    transition:.2s;
+    transition:.2s ease;
 
 }
+
 
 
 button:hover {
 
     box-shadow:
+
         0 0 15px var(--accent-glow);
 
 }
@@ -233,7 +289,6 @@ button:hover {
 /* =========================================================
    Numerology Engine
    ========================================================= */
-
 
 .numerology-engine form {
 
@@ -246,6 +301,19 @@ button:hover {
 }
 
 
+
+.numerology-engine label {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:.25rem;
+
+}
+
+
+
 output {
 
     display:block;
@@ -254,7 +322,7 @@ output {
 
     padding:.75rem;
 
-    background:#000;
+    background:#050505;
 
     color:#00ff88;
 
@@ -270,17 +338,18 @@ output {
    Symbol Graph
    ========================================================= */
 
-
 .symbol-grid {
 
     display:grid;
 
     grid-template-columns:
+
         repeat(3,1fr);
 
     gap:1rem;
 
 }
+
 
 
 .grid-item {
@@ -289,9 +358,9 @@ output {
 
     display:flex;
 
-    justify-content:center;
-
     align-items:center;
+
+    justify-content:center;
 
     font-size:1.5rem;
 
@@ -301,7 +370,7 @@ output {
 
     cursor:pointer;
 
-    transition:.3s;
+    transition:.3s ease;
 
 }
 
@@ -310,20 +379,23 @@ output {
 .grid-item:hover,
 .grid-item.active {
 
-    background:var(--accent);
+    background:
+
+        var(--accent);
 
     color:white;
 
-    transform:scale(1.08);
+    transform:
+
+        scale(1.08);
 
 }
 
 
 
 /* =========================================================
-   Event Console
+   Runtime Console
    ========================================================= */
-
 
 #runtimeLog {
 
@@ -349,10 +421,11 @@ output {
    Diagnostics
    ========================================================= */
 
-
 #runtimeHealth {
 
-    color:var(--success);
+    color:
+
+        var(--success);
 
     font-weight:bold;
 
@@ -363,7 +436,6 @@ output {
 /* =========================================================
    Footer
    ========================================================= */
-
 
 .runtime-footer {
 
@@ -378,15 +450,17 @@ output {
 
 
 /* =========================================================
-   Responsive
+   Responsive Runtime
    ========================================================= */
-
 
 @media(max-width:1000px) {
 
+
     .runtime-dashboard {
 
-        grid-template-columns:1fr;
+        grid-template-columns:
+
+            1fr;
 
     }
 
