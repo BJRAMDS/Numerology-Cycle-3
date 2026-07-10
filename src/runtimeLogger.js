@@ -1,5 +1,8 @@
 import { runtimeDiplomacy } from './runtimeDiplomacy.js';
-
+import {
+    updateRuntimeState,
+    recordRuntimeEvent
+} from "./runtime/runtimeState.js";
 
 const runtimeLog = document.getElementById("runtimeLog");
 
