@@ -4,6 +4,7 @@
  */
 
 // Import necessary functions from your existing runtime and the new numerology module
+import { runtimeDiplomacy } from "./runtimeDiplomacy.js";
 import { logPhase, initThemeToggle } from './runtimeLogger.js';
 import { calculateLifePathNumber } from './modules/numerologyCore.js'; 
 
