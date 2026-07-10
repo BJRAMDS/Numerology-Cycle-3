@@ -1,145 +1,404 @@
+/* =========================================================
+   CODEX CONVERGENCE
+   Runtime Dashboard Theme System
+   ========================================================= */
+
+
 /* Root Variables */
 :root {
-  --bg-color-day: #ffffff;
-  --text-color-day: #000000;
-  --bg-color-night: #202520;
-  --text-color-night: #f5f5f5;
-  --box-color: #ddd;
-  --highlight-color: #007bff;
+
+    --bg-day: #f5f7fa;
+    --text-day: #111827;
+
+    --bg-night: #111827;
+    --text-night: #f9fafb;
+
+    --panel-day: #ffffff;
+    --panel-night: #1f2937;
+
+    --border-day: #d1d5db;
+    --border-night: #374151;
+
+    --accent: #007bff;
+    --accent-glow: rgba(0,123,255,.35);
+
+    --success: #16a34a;
+    --warning: #f59e0b;
+
+    --radius: 12px;
+
+    --shadow:
+        0 8px 24px rgba(0,0,0,.12);
 }
 
-/* Global Reset */
+
+/* =========================================================
+   Global Reset
+   ========================================================= */
+
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-body[data-theme='day'] {
-  background-color: var(--bg-color-day);
-  color: var(--text-color-day);
-}
-
-body[data-theme='night'] {
-  background-color: var(--bg-color-night);
-  color: var(--text-color-night);
-}
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  line-height: 1.6;
-  padding: 1rem;
+
+    font-family:
+        "Segoe UI",
+        system-ui,
+        sans-serif;
+
+    line-height: 1.6;
+
+    min-height: 100vh;
+
+    padding: 1rem;
+
+    transition:
+        background .3s,
+        color .3s;
 }
 
-/* Header */
-header, footer {
-  text-align: center;
-  padding: 1rem 0;
+
+/* =========================================================
+   Themes
+   ========================================================= */
+
+body[data-theme="day"] {
+
+    background: var(--bg-day);
+    color: var(--text-day);
+
 }
 
-/* Container Layout */
-.container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+
+body[data-theme="night"] {
+
+    background: var(--bg-night);
+    color: var(--text-night);
+
 }
 
-/* Theme Toggle Block */
-.parent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
-  background: var(--box-color);
-  border-radius: 8px;
+
+
+/* =========================================================
+   Runtime Header
+   ========================================================= */
+
+
+.runtime-header {
+
+    text-align:center;
+
+    padding:1rem;
+
+    margin-bottom:1.5rem;
+
 }
 
-.child {
-  background-color: whitesmoke;
-  padding: 3.5rem;
-  margin-top: 0.5rem;
-  border: 4px dashed #030000;
+
+.runtime-status {
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:.75rem;
+
+    margin-top:1rem;
+
 }
 
-/* Logger Block */
-.runtime-logger {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  align-items: center;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+
+.runtime-status span {
+
+    padding:.4rem .8rem;
+
+    border-radius:999px;
+
+    border:1px solid var(--border-day);
+
+    font-family:monospace;
+
 }
 
-#phaseSelect, #logPhaseBtn {
-  padding: 0.4rem;
-  font-size: 1rem;
+
+
+/* =========================================================
+   Main Dashboard Layout
+   ========================================================= */
+
+
+.runtime-dashboard {
+
+    display:grid;
+
+    grid-template-columns:
+        250px
+        1fr
+        300px;
+
+    gap:1rem;
+
 }
 
-#phaseOutput {
-  margin-top: 0.5rem;
-  font-family: monospace;
-  background: #f2f2f2;
-  padding: 0.5rem;
-  border-radius: 4px;
+
+/* =========================================================
+   Panels
+   ========================================================= */
+
+
+.control-panel,
+.workspace,
+.diagnostics-panel {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:1rem;
+
 }
 
-/* Flex Grid */
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
+
+
+/* =========================================================
+   Runtime Cards
+   ========================================================= */
+
+
+.runtime-widget {
+
+    background:
+        var(--panel-day);
+
+    padding:1rem;
+
+    border-radius:var(--radius);
+
+    border:
+
+        1px solid var(--border-day);
+
+    box-shadow:var(--shadow);
+
 }
+
+
+
+/* =========================================================
+   Controls
+   ========================================================= */
+
+
+button,
+select,
+input {
+
+    padding:.5rem;
+
+    font-size:1rem;
+
+}
+
+
+button {
+
+    cursor:pointer;
+
+    background:var(--accent);
+
+    color:white;
+
+    border:none;
+
+    border-radius:8px;
+
+    transition:.2s;
+
+}
+
+
+button:hover {
+
+    box-shadow:
+        0 0 15px var(--accent-glow);
+
+}
+
+
+
+/* =========================================================
+   Numerology Engine
+   ========================================================= */
+
+
+.numerology-engine form {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:.75rem;
+
+}
+
+
+output {
+
+    display:block;
+
+    margin-top:1rem;
+
+    padding:.75rem;
+
+    background:#000;
+
+    color:#00ff88;
+
+    font-family:monospace;
+
+    border-radius:8px;
+
+}
+
+
+
+/* =========================================================
+   Symbol Graph
+   ========================================================= */
+
+
+.symbol-grid {
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:1rem;
+
+}
+
 
 .grid-item {
-  flex: 1 0 calc(33.33% - 1rem);
-  text-align: center;
-  padding: 1rem;
-  background: #eaeaea;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background 0.6s ease;
+
+    aspect-ratio:1;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:1.5rem;
+
+    background:#e5e7eb;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    transition:.3s;
+
 }
 
-.grid-item:hover {
-  background: var(--highlight-color);
-  color: white;
+
+
+.grid-item:hover,
+.grid-item.active {
+
+    background:var(--accent);
+
+    color:white;
+
+    transform:scale(1.08);
+
 }
 
-/* Footer */
-.footer {
-  text-align: center;
-  font-size: 0.9rem;
-  padding: 1rem 0;
+
+
+/* =========================================================
+   Event Console
+   ========================================================= */
+
+
+#runtimeLog {
+
+    min-height:250px;
+
+    background:#050505;
+
+    color:#00ff88;
+
+    padding:1rem;
+
+    border-radius:8px;
+
+    font-family:monospace;
+
+    overflow:auto;
+
 }
 
-/* Responsive Layouts */
-@media (max-width: 768px) {
-  .grid-item {
-    flex: 1 0 calc(50% - 1rem);
-  }
 
-  .parent, .runtime-logger {
-    width: 100%;
-  }
+
+/* =========================================================
+   Diagnostics
+   ========================================================= */
+
+
+#runtimeHealth {
+
+    color:var(--success);
+
+    font-weight:bold;
+
 }
 
-@media (max-width: 480px) {
-  .grid-item {
-    flex: 1 0 100%;
-  }
 
-  body {
-    padding: 0.5rem;
-  }
 
-  header h1 {
-    font-size: 1.5rem;
-  }
+/* =========================================================
+   Footer
+   ========================================================= */
 
-  .runtime-logger {
-    padding: 4.5rem;
-  }
+
+.runtime-footer {
+
+    text-align:center;
+
+    padding:2rem 0;
+
+    opacity:.75;
+
+}
+
+
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+
+
+@media(max-width:1000px) {
+
+    .runtime-dashboard {
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .runtime-status {
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
 }
