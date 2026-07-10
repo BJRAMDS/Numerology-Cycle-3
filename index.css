@@ -7,28 +7,24 @@
 /* Root Variables */
 :root {
 
-    --bg-day: #f5f7fa;
-    --text-day: #111827;
+  --bg-day: #f5f7fa;
+  --text-day: #111827;
 
-    --bg-night: #111827;
-    --text-night: #f9fafb;
+  --bg-night: #111827;
+  --text-night: #f9fafb;
 
-    --panel-day: #ffffff;
-    --panel-night: #1f2937;
+  --panel: #ffffff;
 
-    --border-day: #d1d5db;
-    --border-night: #374151;
+  --border: #d1d5db;
 
-    --accent: #007bff;
-    --accent-glow: rgba(0,123,255,.35);
+  --accent: #007bff;
 
-    --success: #16a34a;
-    --warning: #f59e0b;
+  --success: #16a34a;
 
-    --radius: 12px;
+  --radius: 12px;
 
-    --shadow:
-        0 8px 24px rgba(0,0,0,.12);
+  --shadow:
+      0 8px 24px rgba(0,0,0,.12);
 }
 
 
@@ -68,16 +64,18 @@ body {
 
 body[data-theme="day"] {
 
-    background: var(--bg-day);
-    color: var(--text-day);
+    background:var(--bg-day);
+
+    color:var(--text-day);
 
 }
 
 
 body[data-theme="night"] {
 
-    background: var(--bg-night);
-    color: var(--text-night);
+    background:var(--bg-night);
+
+    color:var(--text-night);
 
 }
 
