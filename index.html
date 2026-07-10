@@ -1,194 +1,339 @@
 <body data-theme="day">
 
-    <header class="runtime-header">
-        <h1>✨ Codex Convergence Runtime</h1>
 
-        <div class="runtime-status">
-            <span>Status: ACTIVE</span>
-            <span>Cycle: 3</span>
-            <span id="currentPhase">Phase: onUpdate</span>
-            <span id="currentTheme">Theme: Day</span>
-        </div>
-    </header>
+<header class="runtime-header">
 
+    <h1>
+        ✨ Codex Convergence Runtime
+    </h1>
 
-    <main class="runtime-dashboard">
+    <div class="runtime-status">
 
-        <!-- CONTROL PANEL -->
-        <aside class="control-panel">
+        <span>
+            Status: ACTIVE
+        </span>
 
-            <section class="runtime-widget">
-                <h2>⚙ Runtime Controls</h2>
+        <span>
+            Cycle: 3
+        </span>
 
-                <button id="themeToggle">
-                    🌞 Toggle Theme
-                </button>
-            </section>
+        <span id="currentPhase">
+            Phase: onUpdate
+        </span>
 
+        <span id="currentTheme">
+            Theme: Day
+        </span>
 
-            <section class="runtime-widget">
-                <h2>🧭 Phase Controller</h2>
+    </div>
 
-                <label for="phaseSelect">
-                    Phase:
-                </label>
-
-                <select id="phaseSelect">
-                    <option value="onStart">onStart</option>
-                    <option value="onUpdate" selected>
-                        onUpdate
-                    </option>
-                    <option value="onEOD">
-                        onEOD
-                    </option>
-                    <option value="onStop">
-                        onStop
-                    </option>
-                </select>
-
-                <button id="logPhaseBtn">
-                    Execute Phase
-                </button>
-
-                <output id="phaseOutput">
-                </output>
-
-            </section>
-
-        </aside>
+</header>
 
 
 
-        <!-- MAIN WORKSPACE -->
-        <section class="workspace">
+<main class="runtime-dashboard">
 
 
-            <section class="runtime-widget numerology-engine">
+    <!-- =========================
+         LEFT CONTROL PANEL
+         ========================= -->
 
-                <h2>🔢 Numerology Engine</h2>
-
-                <form id="lifePathForm">
-
-                    <label>
-                        Month
-                        <input 
-                            type="number"
-                            id="inputMonth"
-                            min="1"
-                            max="12"
-                            value="10">
-                    </label>
+    <aside class="control-panel">
 
 
-                    <label>
-                        Day
-                        <input
-                            type="number"
-                            id="inputDay"
-                            min="1"
-                            max="31"
-                            value="25">
-                    </label>
+        <section class="runtime-widget">
+
+            <h2>
+                ⚙ Runtime Controls
+            </h2>
 
 
-                    <label>
-                        Year
-                        <input
-                            type="number"
-                            id="inputYear"
-                            min="1900"
-                            max="2100"
-                            value="1995">
-                    </label>
-
-
-                    <button 
-                        id="calculateLifePathBtn"
-                        type="button">
-                        Calculate
-                    </button>
-
-                </form>
-
-
-                <output id="lifePathOutput">
-                    Life Path: ?
-                </output>
-
-            </section>
-
-
-
-            <section class="runtime-widget symbol-engine">
-
-                <h2>🔮 Symbol Graph</h2>
-
-                <div class="symbol-grid">
-
-                    <div class="grid-item" data-phase="onStart">1</div>
-                    <div class="grid-item" data-phase="onUpdate">2</div>
-                    <div class="grid-item" data-phase="onEOD">3</div>
-
-                    <div class="grid-item" data-phase="onStop">4</div>
-                    <div class="grid-item active">◎</div>
-                    <div class="grid-item" data-phase="onStart">5</div>
-
-                    <div class="grid-item" data-phase="onUpdate">6</div>
-                    <div class="grid-item" data-phase="onEOD">7</div>
-                    <div class="grid-item" data-phase="onStop">8</div>
-
-                </div>
-
-            </section>
+            <button id="themeToggle">
+                🌞 Toggle Theme
+            </button>
 
 
         </section>
 
 
 
-        <!-- OBSERVABILITY PANEL -->
-        <aside class="diagnostics-panel">
+        <section class="runtime-widget">
+
+            <h2>
+                🧭 Phase Controller
+            </h2>
 
 
-            <section class="runtime-widget">
+            <label for="phaseSelect">
+                Phase:
+            </label>
 
-                <h2>📡 Event Console</h2>
 
-                <pre id="runtimeLog">
+            <select id="phaseSelect">
+
+                <option value="onStart">
+                    onStart
+                </option>
+
+                <option value="onUpdate" selected>
+                    onUpdate
+                </option>
+
+                <option value="onEOD">
+                    onEOD
+                </option>
+
+                <option value="onStop">
+                    onStop
+                </option>
+
+            </select>
+
+
+            <button id="logPhaseBtn">
+                Execute Phase
+            </button>
+
+
+            <output id="phaseOutput">
+            </output>
+
+
+        </section>
+
+
+    </aside>
+
+
+
+
+
+    <!-- =========================
+         MAIN WORKSPACE
+         ========================= -->
+
+    <section class="workspace">
+
+
+
+        <section class="runtime-widget numerology-engine">
+
+
+            <h2>
+                🔢 Numerology Engine
+            </h2>
+
+
+
+            <form id="lifePathForm">
+
+
+                <label>
+                    Month
+
+                    <input
+                        type="number"
+                        id="inputMonth"
+                        min="1"
+                        max="12"
+                        value="10">
+                </label>
+
+
+
+                <label>
+                    Day
+
+                    <input
+                        type="number"
+                        id="inputDay"
+                        min="1"
+                        max="31"
+                        value="25">
+                </label>
+
+
+
+                <label>
+                    Year
+
+                    <input
+                        type="number"
+                        id="inputYear"
+                        min="1900"
+                        max="2100"
+                        value="1995">
+                </label>
+
+
+
+                <button
+                    id="calculateLifePathBtn"
+                    type="button">
+
+                    Calculate Life Path
+
+                </button>
+
+
+            </form>
+
+
+
+            <output id="lifePathOutput">
+                Life Path: ?
+            </output>
+
+
+
+        </section>
+
+
+
+
+
+        <section class="runtime-widget symbol-engine">
+
+
+            <h2>
+                🔮 Symbol Graph
+            </h2>
+
+
+
+            <div class="symbol-grid">
+
+
+                <div class="grid-item" data-phase="onStart">
+                    1
+                </div>
+
+
+                <div class="grid-item" data-phase="onUpdate">
+                    2
+                </div>
+
+
+                <div class="grid-item" data-phase="onEOD">
+                    3
+                </div>
+
+
+
+                <div class="grid-item" data-phase="onStop">
+                    4
+                </div>
+
+
+                <div class="grid-item active">
+                    ◎
+                </div>
+
+
+                <div class="grid-item" data-phase="onStart">
+                    5
+                </div>
+
+
+
+                <div class="grid-item" data-phase="onUpdate">
+                    6
+                </div>
+
+
+                <div class="grid-item" data-phase="onEOD">
+                    7
+                </div>
+
+
+                <div class="grid-item" data-phase="onStop">
+                    8
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </section>
+
+
+
+
+
+
+    <!-- =========================
+         RIGHT DIAGNOSTICS PANEL
+         ========================= -->
+
+
+    <aside class="diagnostics-panel">
+
+
+        <section class="runtime-widget">
+
+
+            <h2>
+                📡 Event Console
+            </h2>
+
+
+            <pre id="runtimeLog">
 Runtime initialized...
-                </pre>
-
-            </section>
+            </pre>
 
 
-
-            <section class="runtime-widget">
-
-                <h2>🩺 Diagnostics</h2>
-
-                <output id="runtimeHealth">
-                    Runtime Healthy
-                </output>
-
-            </section>
+        </section>
 
 
-        </aside>
 
 
-    </main>
+        <section class="runtime-widget">
 
 
-    <footer class="runtime-footer">
-
-        <p>
-            Codex Convergence | Numerology Cycle 3
-        </p>
-
-    </footer>
+            <h2>
+                🩺 Diagnostics
+            </h2>
 
 
-    <script src="./src/runtimeDiplomacy.js"></script>
-    <script type="module" src="./src/index.js"></script>
+            <output id="runtimeHealth">
+                Runtime Healthy
+            </output>
+
+
+        </section>
+
+
+    </aside>
+
+
+
+</main>
+
+
+
+
+
+<footer class="runtime-footer">
+
+
+    <p>
+        Codex Convergence | Numerology Cycle 3
+    </p>
+
+
+</footer>
+
+
+
+
+
+<script src="./src/runtimeDiplomacy.js"></script>
+
+<script type="module" src="./src/index.js"></script>
+
+
 
 </body>
