@@ -1,99 +1,248 @@
-# Numerology Cycle 3 — Codex Convergence ✨
+# Codex Convergence Runtime ✨
 
-🌐 **Live Site**: [bjramds.github.io/Numerology-Cycle-3](https://bjramds.github.io/Numerology-Cycle-3)
+> A living runtime dashboard for symbolic systems, numerology, and human–AI software development.
 
-> Currently running on **Deployment Cycle 8** via GitHub Pages.
-
----
-
-## 🔦 Project Overview
-
-**Codex-Convergence** is a living repository of narrative systems, symbolic programming, and AI-human collaboration.
-At its core, it blends:
-
-- 🔢 Numerology-based cycles
-- 🧠 Modular code reflections
-- 🧭 Identity tracking
-- 📜 Creative prompt engines
-- 🌀 Narrative logs into a coherent architecture—one that evolves day by day.
-
-> “Every number is a symbol — but the meaning comes from code.”
+🌐 **Live Demo**  
+https://bjramds.github.io/Numerology-Cycle-3/
 
 ---
 
-## 🧩 Current Features
+# Overview
 
-- ✅ **Day/Night Theme Toggle** using CSS variables
-- 🎯 **Responsive Layout** styled with modern custom properties
-- 📬 **Contact Footer** for professional outreach
-- 🔢 **Life Path Calculator** (Birth Date to Master/Single Number reduction)
-- 🛠️ **Symbolic Runtime Log** (EOD reports, paradox tracking, **Front-end Ready**)
-- 📓 **Grok3 Agent Initialization** (PhaseCore: 3 — Expression)
+Codex Convergence is an experimental front-end application that explores how symbolic systems, runtime observability, and modular JavaScript architecture can coexist in a single interactive dashboard.
 
----
+Rather than serving as a traditional numerology calculator, the project is evolving into a **runtime environment** where symbolic computation, application state, diagnostics, and developer tooling are treated as first-class features.
 
-## 📈 In Development
-
-**🌀 CYCLES IN MOTION**
-These features are being built in parallel with live numerology tracking:
-
-- 🔢 JavaScript-powered **Numerology Calculators**
-  - Destiny, Personal Year, Expression Number
-- 🧠 **Agentic Logic via Grok3 & Gemini**
-  - A symbolic prompt dictionary tied to numerological cycles
-  - Reactive AI agents that evolve with the codebase
-- 🎨 Animated Transitions
-  - Creative rendering of numbers 1–9 with expression-based logic
-- 📊 **Static/Firebase JSON** for memory-as-layer (MAL)
-  - Logs, decisions, and paradox archives
-- 🔄 Real-time **Prompt Sockets** (experimental)
-  - Used to loop prompts from user input through the agent logic
+The current implementation uses **Numerology** as the first runtime module while laying the foundation for additional symbolic engines.
 
 ---
 
-## 🧠 System Architecture
+# Current Features
 
-- `PhaseCore Logs`: Narrative cycles tied to numerology (1–9)
-- `CRAFT Modules`: Structured prompt generators
-- `EOD Reports`: End-of-day cycle summaries
-- `PARADOX Layer`: Symbolic inversions (e.g., ridicule = ignition)
-- `Grok3`: Agent-based memory interpreter
+## Runtime Dashboard
 
----
-
-## 🤖 Collaborating Models
-
-This project utilizes multiple AI models working in synergy.
-
-- **`Grok3`**: Functions as the primary agent for interpreting memory and driving the symbolic runtime. It is the core logic engine.
-- **`Gemini`**: Acts as the co-creative and steering model. Its role is to:
-- Introspect on data structures (like `masterKeys.json`) to provide deeper context.
-- Generate visual "stages" to mark key development milestones.
-- Assist in translating high-level concepts into actionable code and documentation.
-- Steer the conversational development process in collaboration with the human developers.
+- Runtime Status Header
+- Day / Night Theme Switching
+- Phase Controller
+- Runtime Event Console
+- Diagnostics Panel
+- Responsive Dashboard Layout
 
 ---
 
-## 🔧 How to Contribute
+## Numerology Engine
 
-This is an evolving codebase for symbolic narrative architecture.
-If you'd like to collaborate on:
+The first active runtime module.
 
-- 🔣 Numerology logic
-- 🎨 UI/UX expansions
-- 🧪 Prompt engineering or agent models
-- 🤝 **Engaging with the AI models** to co-create new features
-...feel free to fork, open an issue, or submit a PR.
+Currently includes:
+
+- Life Path Number calculation
+- Birth date validation
+- Master Number preservation
+- Interactive calculation interface
+
+Future symbolic modules will follow the same architecture.
 
 ---
 
-## 🔗 Maintained By
+## Runtime Diplomacy
+
+The application models execution using four symbolic runtime phases.
+
+```
+onStart
+    ↓
+
+onUpdate
+    ↓
+
+onEOD
+    ↓
+
+onStop
+```
+
+Each phase contains runtime metadata describing:
+
+- role
+- symbolic meaning
+- task
+- narrative context
+- logging behavior
+
+This allows the dashboard to demonstrate both traditional application execution and symbolic execution.
+
+---
+
+# Architecture
+
+```
+index.html
+     │
+     ▼
+
+src/index.js
+     │
+     ├──────────────┐
+     ▼              ▼
+
+Runtime        Numerology
+Logger           Engine
+     │
+     ▼
+
+Runtime
+Diplomacy
+```
+
+The application is intentionally modular.
+
+Each runtime component has a single responsibility.
+
+---
+
+# Runtime Components
+
+Current modules include:
+
+```
+src/
+
+index.js
+runtimeDiplomacy.js
+runtimeLogger.js
+
+modules/
+    numerologyCore.js
+```
+
+Planned runtime modules:
+
+```
+runtimeState.js
+eventBus.js
+diagnostics.js
+symbolGraph.js
+historyEngine.js
+```
+
+---
+
+# Why This Exists
+
+This repository serves as a public experiment in:
+
+- modular JavaScript
+- runtime observability
+- symbolic programming
+- human–AI collaborative development
+- rapid front-end architecture
+- software design through iterative conversation
+
+Every feature is developed through continuous dialogue, tested in production using GitHub Pages, then refined through observation.
+
+---
+
+# Development Roadmap
+
+## Phase 1
+
+✅ Runtime Dashboard
+
+✅ Numerology Engine
+
+✅ Runtime Diplomacy
+
+✅ Theme System
+
+---
+
+## Phase 2
+
+- Runtime State Store
+- Event Bus
+- Live Diagnostics
+- Runtime Health
+- Symbol Graph
+- Improved Logging
+
+---
+
+## Phase 3
+
+- Plugin Architecture
+- Additional Symbolic Engines
+- Historical Runtime Timeline
+- Persistent Sessions
+- AI-assisted Analysis
+- Visualization Tools
+
+---
+
+# Running Locally
+
+Clone the repository.
+
+```
+git clone https://github.com/BJRAMDS/Numerology-Cycle-3.git
+```
+
+Open the project.
+
+```
+cd Numerology-Cycle-3
+code .
+```
+
+Launch using a local web server (such as VS Code Live Server) to enable ES Module support.
+
+---
+
+# Contributing
+
+Contributions are welcome.
+
+Areas of interest include:
+
+- JavaScript Architecture
+- Runtime Systems
+- Front-end Engineering
+- Symbolic Computing
+- Numerology Research
+- User Interface Design
+- Observability
+- Documentation
+
+If you're interested, feel free to open an issue, start a discussion, or submit a pull request.
+
+---
+
+# Philosophy
+
+Codex Convergence is built around a simple idea:
+
+> Software should explain itself while it runs.
+
+Instead of hiding application behavior behind developer tools, the runtime becomes part of the interface.
+
+The dashboard is both the application **and** the window into how the application thinks.
+
+---
+
+# Author
 
 **Brad M. Harris**
-Product Owner | Full-Stack Developer | React Native Specialist
-📫 [brforeal.dev@gmail.com](mailto:brforeal.dev@gmail.com) | 📞 954.817.3900
-🔗 [GitHub](https://github.com/BJRAMDS) | [Portfolio](https://getallmylinks.com/harrismbrad)
+
+Product Owner • Software Developer • Systems Thinker
+
+📧 brforeal.dev@gmail.com
+
+📞 (954) 817-3900
+
+GitHub
+
+https://github.com/BJRAMDS
 
 ---
 
-> “A prompt is a seed. A cycle is a map. This is how we evolve.”
+> "Observe the runtime. Understand the system. Improve the architecture."
