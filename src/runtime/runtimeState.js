@@ -3,7 +3,10 @@
     Runtime State Store
     Version 0.1.0
 */
-
+import {
+    updateRuntimeState,
+    recordRuntimeEvent
+} from "./runtime/runtimeState.js";
 
 export const runtimeState = {
 
